@@ -8,7 +8,7 @@ export async function GET() {
                 statusText:'Failed'
             })
         }
-        const response=await fetch(`${BASE_URL}/register/`)
+        const response=await fetch(`${BASE_URL}/users/`)
         const result=await response.json();
         console.log(result);
         return new Response(JSON.stringify(result),{

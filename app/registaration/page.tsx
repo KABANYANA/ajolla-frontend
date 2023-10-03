@@ -1,317 +1,199 @@
+
+
 'use client'
-
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import useCreateUsers from "../hooks/useCreateUsers";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Image from 'next/image';
-
-const Register = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-  const [fullName, setFullName] = useState("");
-  const [username, setUserName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [phoneNumberError, setPhoneNumberError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [confirmPasswordError, setConfirmPasswordError] = useState("");
-  const { user, handleRegister } = useCreateUsers({
+import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+import useCreateUser from '../hooks/useCreateUser';
+const SignUpPage = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const { user, handleSignUp } = useCreateUser({
     username,
     email,
     password,
-    first_name: fullName,
+    first_name: firstName,
+    last_name: lastName,
+    phone_number:phoneNumber,
+   
   });
-
-  const [formError, setFormError] = useState("");
-  const [registrationSuccess, setRegistrationSuccess] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
+  const router = useRouter();
+  const handleTogglePassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setConfirmPasswordVisible(!confirmPasswordVisible);
-  };
-
-  const handleFullNameChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
-    setFullName(value);
-  };
-
-  const handlePhoneNumberChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
-    if (/^(\+)?[0-9]*$/.test(value)) {
-      setPhoneNumber(value);
-      setPhoneNumberError("");
-    } else {
-      setPhoneNumberError("Phone number should contain digits only.");
-    }
-  };
-
-  const handleEmailChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
-    setEmail(value);
-    if (/^\S+@\S+\.\S+$/.test(value)) {
-      setEmailError("");
-    } else {
-      setEmailError("Invalid email format.");
-    }
-  };
-
-  const handlePasswordChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
-    setPassword(value);
-    if (value.length >= 6) {
-      setPasswordError("");
-    } else {
-      setPasswordError("Password should be at least 6 characters.");
-    }
-  };
-
-  const handleConfirmPasswordChange = (e: { target: { value: any; }; }) => {
-    const value = e.target.value;
-    setConfirmPassword(value);
-    if (value === password) {
-      setConfirmPasswordError("");
-    } else {
-      setConfirmPasswordError("Passwords do not match.");
-    }
-  };
-
-  const handleRegisterSuccess = () => {
-    const successMessageStyle = {
-    };
-  
-  
-    toast.success(
-      <div>
-        <span style={successMessageStyle}>
-          <i className="fas fa-check" ></i> Registration successful!
-        </span> You can now sign in.
-      </div>,
-      {
-        position: toast.POSITION.TOP_CENTER,
-      }
-    );
-  
-    setTimeout(() => {
-      setRegistrationSuccess(true);
-    }, 3000); 
-  };
-  
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleCreateUser = async (e:any) => {
     e.preventDefault();
-    if (
-      fullName.trim() === "" ||
-      phoneNumber.trim() === "" ||
-      email.trim() === "" ||
-      password.trim() === "" ||
-      confirmPassword.trim() === ""
-    ) {
-      setFormError("All fields are required.");
-    } else if (
-      phoneNumberError === "" &&
-      emailError === "" &&
-      passwordError === "" &&
-      confirmPasswordError === ""
-    ) {
-      handleRegisterSuccess();
+    if (username && email && password && firstName && lastName) {
+      await handleSignUp();
+      router.push('/dashboard');
     } else {
-      setFormError("Please input the right credentials.");
+      alert('Please fill all required fields.');
     }
   };
-
-  useEffect(() => {
-    if (registrationSuccess) {
-      window.location.href = "/logins";
+  const isSignUpComplete = user !== null;
+  toast.success(
+    'You have successfully registered! Please log in.',
+    {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 5000,
+      hideProgressBar: true,
+      className: 'bg-green-500 text-white p-4 rounded z-10', 
     }
-  }, [registrationSuccess]);
-
+  );
   return (
     <div className="flex flex-col sm:flex-row h-screen text-xl">
       <div className="bg-custom-orange sm:w-1/3 flex justify-center items-center">
-         {/* <img src="LO.png" alt="Logo" className="w-72" /> */}
+        <div className="flex items-center 2 ml-4">
+          <img
+            src="/LO.png"
+            alt="Logo"
+            
+          />
+          
+        </div>
+       
+        <div className="mt-">
          
-         <Image
-     src="/LO.png"
-      alt="Logo"
-      width={400}
-      height={200}
-      style={{ marginTop: '20px', marginLeft: '10px' }}
+        </div>
       
-    /> 
       </div>
-      <div className="w-full bg-white flex flex-col justify-center items-center p-6 sm:w-2/3 sm:p-12">
-        <h1 className="text-3xl font-semibold w-1/ mb-8 text-4xl font-bold mb-8 mt-4 text-custom-orange">
-          Create an Account
-        </h1>
-        {registrationSuccess ? (
-          <div className="text-green-500 text-lg mb-4 w-2/3">
-            Registration successful! You can now{" "}
-            <Link href="/login">sign in</Link>.
-          </div>
-        ) : (
-          <form
-            className="flex flex-col items-center w-full sm:w-120"
-            onSubmit={(e) => {
-              handleSubmit(e);
-            }}
-          >
-            <div className="mb-4 sm:mb-6 w-2/3">
-              <label className="text-lg  w-min " htmlFor="fullName">
+      <div className="form-container bg-white flex flex-col items-center justify-center md:w-2/3 w-full">
+      <h1 className="text-3xl font-bold w-1/   font-bold mb-1 mt-4 text-custom-orange">
+        Create an Account
+       </h1>
+       <form className="mb-4 sm:mb-6 w-2/3" onSubmit={handleCreateUser}>
+          <div className="mb-2">
+          <label className="text-lg  w-min r" htmlFor="First Name">
                 Full Name
               </label>
-              <input
-                id="fullName"
-                type="text"
-                placeholder="Enter Full Name"
-                className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-16 border rounded-2xl px-4 py-8"
-                onChange={handleFullNameChange}
-                value={fullName}
-              />
-            </div>
-            <div className="mb-4 sm:mb-6 w-2/3">
-              <label className="text-lg  w-min " htmlFor="phoneNumber">
-                Phone Number
+            <input
+              type="text"
+              id="firstName"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"
+              placeholder="Enter Full Name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-2">
+          <label className="text-lg  w-min r" htmlFor=" Middle Name">
+                Middle Name
               </label>
-              <input
-                id="phoneNumber"
-                type="text"
-                placeholder="Enter Phone Number"
-                className={`text-lg font-thin w-full border-solid border-custom-brown  bg-white/80 h-16 border rounded-2xl rounded px-4 py-2 ${
-                  phoneNumberError ? "border-red-500" : ""
-                }`}
-                onChange={handlePhoneNumberChange}
-                value={phoneNumber}
-              />
-              {phoneNumberError && (
-                <p className="text-red-500 text-sm mt-1">{phoneNumberError}</p>
-              )}
-            </div>
-            <div className="mb-4 sm:mb-6 w-2/3">
-              <label className="text-lg  w-min " htmlFor="email">
-                Email
+            <input
+              type="text"
+              id="lastName"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"    
+              placeholder="Enter  Middle Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <label className="text-lg  w-min r" htmlFor="User Name">
+                User Name
               </label>
-              <input
-                id="email"
-                type="text"
-                placeholder="Enter Email"
-                className={`text-lg font-thin w-full border-solid border-custom-brown  bg-white/80 h-16 border  px-4 rounded-2xl py-2 ${
-                  emailError ? "border-red-500" : ""
-                }`}
-                onChange={handleEmailChange}
-                value={email}
-              />
-              {emailError && (
-                <p className="text-red-500 text-sm mt-1">{emailError}</p>
-              )}
-            </div>
+          <div className="mb-2">
+            
+            <input
+              type="text"
+              id="username"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              placeholder="Enter Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-2">
+          <label className="text-lg  w-min r" htmlFor="Phone Number">
+               Phone Number
+              </label>
+            
+            <input
+              type="text"
+              id="Phone Number"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              placeholder="Enter Phone NUmber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+            />
+          </div>
 
-            <div className="relative mb-4 sm:mb-6 w-2/3">
-              <label className="text-lg  w-min r" htmlFor="password">
+          <div className="mb-2">
+          <label className="text-lg  w-min r" htmlFor="Email">
+               Email
+              </label>
+            <input
+              type="email"
+              id="email"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-2 relative">
+          <label className="text-lg  w-min r" htmlFor="Password">
                 Password
               </label>
-              <input
-                id="password"
-                type={passwordVisible ? "password" : "text"}
-                placeholder="Enter Password"
-                className={`text-lg font-thin w-full border-solid border-custom-brown bg-white/80 h-16 border rounded-2xl px-4 py-2 ${
-                  passwordError ? "border-red-500" : ""
-                }`}
-                onChange={handlePasswordChange}
-                value={password}
-              />
-              <button
-                type="button"
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 "
-                onClick={togglePasswordVisibility}
-                style={{ marginTop: "10px" }}
-              >
-                {passwordVisible ? (
-                  <FaEyeSlash
-                    className="h-6 w-6 mt-6 text-gray-400 hover:text-gray-600 cursor-pointer"
-                  />
-                ) : (
-                  <FaEye
-                    className={`h-6 w-6 mt-6 text-gray-400 hover:text-gray-600 cursor-pointer ${
-                      passwordVisible ? "hidden" : ""
-                    }`}
-                  />
-                )}
-              </button>
-              {passwordError && (
-                <p className="text-red-500 text-sm mt-1">{passwordError}</p>
-              )}
-            </div>
-            <div className="relative mb-4 sm:mb-6 w-2/3">
-              <label className="text-lg  w-min " htmlFor="confirmPassword">
-                Confirm Password
-              </label>
-              <input
-                id="confirmPassword"
-                type={confirmPasswordVisible ? "password" : "text"}
-                placeholder="Enter Password "
-                className={`text-lg font-thin w-full border-solid border-custom-brown bg-white/80 h-16 border rounded-2xl px-4 py-2 ${
-                  confirmPasswordError ? "border-red-500" : ""
-                }`}
-                onChange={handleConfirmPasswordChange}
-                value={confirmPassword}
-              />
-              <button
-                type="button"
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 focus:outline-none"
-                onClick={toggleConfirmPasswordVisibility}
-                style={{ marginTop: "10px" }}
-              >
-                {confirmPasswordVisible ? (
-                  <FaEyeSlash
-                    className="h-6 w-6 mt-6 text-gray-400 hover:text-gray-600 cursor-pointer"
-                  />
-                ) : (
-                  <FaEye
-                    className={`h-6 w-6 mt-6 text-gray-400 hover:text-gray-600 cursor-pointer ${
-                      confirmPasswordVisible ? "hidden" : ""
-                    }`}
-                  />
-                )}
-              </button>
-              {confirmPasswordError && (
-                <p className="text-red-500 text-sm mt-1">
-                  {confirmPasswordError}
-                </p>
-              )}
-            </div>
-            {formError && (
-              <p className="text-red-500 text-sm mb-4 w-2/3">{formError}</p>
-            )}
-            {registrationSuccess || (
-              <div className="mb-4 w-full flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-[#07A685] text-white w-40 h-16 rounded-[50px] font-bold"
-                >
-                  Sign Up
-                </button>
-              </div>
-            )}
-          </form>
-        )}
-        <p className="text-center text-lg font-light w-full ">
-          Already have an account?{" "}
-          <Link href="/logins">
-            <span className="font-bold">Sign in</span>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"             
+               placeholder="Enter Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="absolute top-[44px] right-4 cursor-pointer "
+              onClick={handleTogglePassword}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+          <div className="mb-2 w-full flex justify-center">
+
+            
+    
+<button
+  type="submit"
+  className={`bg-[#07A685] text-white w-40 h-12 rounded-[50px] font-bold ${
+    isSignUpComplete ? '' : 'pointer-events-none opacity-50'
+  }`}
+>
+  
+    Sign up
+ 
+</button>
+
+  
+</div>
+<p className="text-center text-lg font-light w-full ">
+              Already have an account?{" "}
+         <Link href="/logins">
+             <span className="font-bold">Sign in</span>
           </Link>
-        </p>
+      </p>
+
+        </form>
+        {isSignUpComplete && (
+          <p className="md:text-xl text-base text-customPurple mt-4">
+           {' '}
+          </p>
+        )}
       </div>
-      <ToastContainer />
     </div>
   );
 };
-
-export default Register;
+export default SignUpPage;

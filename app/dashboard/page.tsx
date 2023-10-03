@@ -239,7 +239,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
   }, []);
   return (
     <Layout>
-      <div className="container mx-auto ml-60">
+      <div className="container mx-auto ml-16">
         <div className="mt-10">
           <div className="grid grid-cols-2">
             <h1 className="text-4xl ml-32 font-bold mb-16">Dashboard</h1>
@@ -248,28 +248,28 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
       alt="Logo"
       width={120}
       height={80}
-      style={{ marginTop: '-30px', marginLeft: '500px' }}
+      style={{ marginTop: '-30px', marginLeft: '250px' }}
       
     /> 
           </div>
           <h1 className="text-4xl ml-32 font-semibold">Today Summary</h1>
           <div className="grid grid-cols-4 mt-16">
-            <div className="w-3/4 h-40 bg-pink-100 rounded-2xl text-center ml-32">
+            <div className="w-4/6 h-40 bg-pink-100 rounded-2xl text-center ml-32">
               <FcDocument className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="coursesCount">Loading...</h1>
               <p>Courses Taken</p>
             </div>
-            <div className="w-3/4 h-40 bg-yellow-100 rounded-2xl text-center ml-32">
+            <div className="w-4/6 h-40 bg-yellow-100 rounded-2xl text-center ml-20">
               <FcCalendar className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="appointmentsCount">Loading...</h1>
               <p>Appointments</p>
             </div>
-            <div className="w-3/4 h-40 bg-purple-100 rounded-2xl text-center ml-32">
+            <div className="w-4/6 h-40 bg-purple-100 rounded-2xl text-center ml-8">
               <FcBusinesswoman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="mothersCount">Loading...</h1>
               <p>New Mothers</p>
             </div>
-            <div className="w-3/4 h-40 bg-green-100 rounded-2xl text-center ml-32">
+            <div className="w-4/6 h-40 bg-green-100 rounded-2xl text-center ">
               <FcBusinessman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="lactationistsCount">Loading...</h1>
               <p>New Lactationists</p>

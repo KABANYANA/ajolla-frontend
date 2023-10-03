@@ -1,6 +1,4 @@
-
-
-import { BASE_URL } from "@/app/config";
+import { BASE_URL } from "../../config";
 export async function POST(request: Request) {
   try {
     if (!BASE_URL) {
@@ -9,18 +7,17 @@ export async function POST(request: Request) {
         statusText: "Failed",
       });
     }
-    const admin = await request.json().then(async (response) => {
-      const result = await fetch(`${BASE_URL}/register/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(response),
-      });
-      const post = await result.json();
-      return post;
+    const body = await request.json().then(response => response);
+    const result = await fetch(`${BASE_URL}/api/register/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
     });
-    return new Response(JSON.stringify(admin), {
+    const user = await result.json();
+console.log('users', user);
+    return new Response(JSON.stringify(user), {
       status: 201,
       statusText: "Success",
     });
