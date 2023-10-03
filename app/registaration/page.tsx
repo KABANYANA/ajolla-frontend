@@ -57,7 +57,7 @@ const SignUpPage = () => {
           alt="Logo"
           width={400}
           height={200}
-          style={{ marginTop: '20px', marginLeft: '10px' }}
+          style={{ marginTop: '20px', marginRight: '16px' }}
         />
           
         </div>
