@@ -42,7 +42,7 @@ const MotherList: React.FC = () => {
 
     <Layout>
   <div className="grid grid-cols-1 sm:grid-cols-2">
-    <h1 className="text-4xl mt-16 font-bold mb-16 ml-60 text-center sm:text-left">
+    <h1 className="text-4xl mt-16 font-bold mb-16 ml-80 text-center sm:text-left">
       Mothers
     </h1>
     <div className="flex justify-center sm:justify-end">
@@ -51,27 +51,27 @@ const MotherList: React.FC = () => {
         alt="Logo"
         width={120}
         height={80}
-        className="mt-10 mr-56"
+        className="mt-10 mr-32"
       />
     </div>
   </div>
   <div className="mt-10 mx-auto ml-60">
-    <table className="table-auto w-2/3 ">
+    <table className="table-auto w-full sm:w-2/3  sm:ml-16 overflow-x-auto ">
       <thead>
         <tr>
           <th className="px-2 py-2">ID</th>
-          <th className="px-2 py-2">Name</th>
-          <th className="px-2 py-2">Email</th>
-          <th className="px-2 py-2">Phone</th>
+          <th className="px-16 sm:px-14 py-2">Name</th>
+          <th className="px-16 sm:px-14 py-2">Email</th>
+          <th className="px-16 sm:px-14 py-2">Phone</th>
         </tr>
       </thead>
       <tbody>
         {mothers.map((mother) => (
           <tr key={mother.id}>
-            <td className="border px-2 sm:px-8 py-2 sm:py-4">{mother.id}</td>
-            <td className="border px-2 sm:px-8 py-2 sm:py-4">{mother.first_name}</td>
-            <td className="border px-2 sm:px-8 py-2 sm:py-4">{mother.email}</td>
-            <td className="border px-2 sm:px-8 py-2 sm:py-4">{mother.phone}</td>
+            <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.id}</td>
+            <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.first_name}</td>
+            <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.email}</td>
+            <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.phone}</td>
           </tr>
         ))}
       </tbody>

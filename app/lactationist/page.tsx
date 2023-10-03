@@ -196,8 +196,8 @@ const MotherList: React.FC = () => {
         setMothers(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching mothers:', error);
-        setError('Error fetching mothers. Please try again later.');
+        console.error('Error fetching Lactationists:', error);
+        setError('Error fetching lactationists. Please try again later.');
         setLoading(false);
       }
     };
@@ -216,7 +216,7 @@ const MotherList: React.FC = () => {
   return (
     <Layout>
       <div className="grid grid-cols-1 sm:grid-cols-2">
-        <h1 className="text-3xl mt-16 font-bold mb-16 text-center sm:text-left lg:ml-96 ml-60">
+        <h1 className="text-3xl mt-16 font-bold mb-16 text-center sm:text-left lg:ml-80 ml-60">
           Lactationist
         </h1>
         <div className="flex justify-center mr-32 sm:justify-end">
@@ -224,23 +224,23 @@ const MotherList: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-10 ml-4 sm:ml-60">
+      <div className="mt-10 lg:ml-60 sm:ml-60">
         <table className="table-auto w-full sm:w-2/3  sm:ml-16 overflow-x-auto">
           <thead>
             <tr>
-              <th className="px-6 py-2">First Name</th>
-              <th className="px-6 py-2">Second Name</th>
-              <th className="px-6 py-2">Email</th>
-              <th className="px-6 py-2">Biography</th>
+              <th className="px-16 sm:px-14 py-2">First Name</th>
+              <th className="px-16 sm:px-14 py-2">Second Name</th>
+              <th className="px-16 sm:px-14 py-2">Email</th>
+              <th className="px-16 sm:px-14 py-2">Biography</th>
             </tr>
           </thead>
           <tbody>
             {mothers.map((mother) => (
               <tr key={mother.first_name}>
-                <td className="border px-2 py-2 sm:px-4 sm:py-4">{mother.first_name}</td>
-                <td className="border px-2 py-2 sm:px-4 sm:py-4">{mother.second_name}</td>
-                <td className="border px-2 py-2 sm:px-4 sm:py-4">{mother.email}</td>
-                <td className="border px-2 py-2 sm:px-4 sm:py-4">{mother.bio}</td>
+                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.first_name}</td>
+                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.second_name}</td>
+                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.email}</td>
+                <td className="border px-20 py-2 sm:px-20 sm:py-4">{mother.bio}</td>
               </tr>
             ))}
           </tbody>

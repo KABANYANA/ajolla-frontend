@@ -242,7 +242,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
       <div className="container mx-auto ml-20">
         <div className="mt-10">
           <div className="grid grid-cols-2">
-            <h1 className="text-4xl ml-32 font-bold mb-16">Dashboard</h1>
+            <h1 className="text-4xl ml-56 font-bold mb-16">Dashboard</h1>
             <Image
      src="/LO.png"
       alt="Logo"
@@ -252,51 +252,51 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
       
     /> 
           </div>
-          <h1 className="text-4xl ml-32 font-semibold">Today Summary</h1>
-          <div className="grid grid-cols-4 mt-16">
-            <div className="w-4/6 h-40 bg-pink-100 rounded-2xl text-center ml-32">
+          <h1 className="text-4xl ml-56 font-semibold">Today Summary</h1>
+          <div className="grid grid-cols-4 mt-16 ml-20">
+            <div className="w-8/12 h-40 bg-pink-100 rounded-2xl text-center ml-32">
               <FcDocument className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="coursesCount">Loading...</h1>
               <p>Courses Taken</p>
             </div>
-            <div className="w-4/6 h-40 bg-yellow-100 rounded-2xl text-center ml-20">
+            <div className="w-8/12 h-40 bg-yellow-100 rounded-2xl text-center ml-20">
               <FcCalendar className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="appointmentsCount">Loading...</h1>
               <p>Appointments</p>
             </div>
-            <div className="w-4/6 h-40 bg-purple-100 rounded-2xl text-center ml-8">
+            <div className="w-8/12 h-40 bg-purple-100 rounded-2xl text-center ml-8">
               <FcBusinesswoman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="mothersCount">Loading...</h1>
               <p>New Mothers</p>
             </div>
-            <div className="w-4/6 h-40 bg-green-100 rounded-2xl text-center ">
+            <div className="w-8/12 h-40 bg-green-100 rounded-2xl text-center ">
               <FcBusinessman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="lactationistsCount">Loading...</h1>
               <p>New Lactationists</p>
             </div>
           </div>
-          <div className="grid grid-cols-2 ml-32">
+          <div className="grid grid-cols-2 ml-56">
             <div>
-              <h1 className="mt-32 -mb-56 font-bold ml-16">Top Services</h1>
-              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white " style={{width:"85%" ,height:"40vh"}}>
+              <h1 className="mt-32 -mb-56 font-bold ml-32">Top Services</h1>
+              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white " style={{width:"75%" ,height:"40vh"}}>
                 <canvas id="pieChart" width="360" height="240"></canvas>
               </div>
             </div>
             <div>
               <h1 className="mt-32 -mb-56 font-bold ml-16">Visitor Insights</h1>
-              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white" style={{width:"85%", height:"40vh"}}>
+              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white" style={{width:"75%", height:"40vh"}}>
                 <canvas id="lineChart" width="360" height="240"></canvas>
               </div>
             </div>
             <div>
               <h1 className="mt-32 -mb-56 font-bold ml-16">Volume Vs Service Level</h1>
-              <div className="rounded-xl w-full mt-56  shadow-xl bg-white" style={{width:"85%",height:"40vh"}}>
+              <div className="rounded-xl w-full mt-56  shadow-xl bg-white" style={{width:"75%",height:"40vh"}}>
                 <canvas id="stackedBarChart2" width="720" height="550"></canvas>
               </div>
             </div>
             <div>
               <h1 className="mt-32 -mb-56 font-bold ml-16">Target Vs Reality</h1>
-              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white" style={{width:"85%", height:"40vh"}}>
+              <div className=" rounded-xl w-full mt-56 shadow-xl bg-white" style={{width:"75%", height:"40vh"}}>
                 <canvas id="stackedBarChart1"  width="720" height="550"></canvas>
               </div>
             </div>
