@@ -75,7 +75,7 @@ const Sidebar = () => {
           <Link href="/dashboard">
             <div className="flex ">
               <FaChartPie size={40} className="-ml-12 -mt-1" />
-              <span className="text-xl">Dashboard</span>
+              <span className="ml-3">Dashboard</span>
             </div>
           </Link>
         </div>
@@ -88,7 +88,7 @@ const Sidebar = () => {
           <Link href="/lactationist">
             <div className="flex items-center">
               <BsFillPersonFill size={40} className="-ml-12  -mt-1" />
-              <span className="text-xl">Lactationist</span>
+              <span className="ml-3">Lactationist</span>
             </div>
           </Link>
         </div>
@@ -101,7 +101,7 @@ const Sidebar = () => {
           <Link href="/mothers">
             <div className="flex items-center">
               <RiParentFill size={40} className="-ml-12 -mt-1" />
-              <span className="text-xl">Mothers</span>
+              <span className="ml-3">Mothers</span>
             </div>
           </Link>
         </div>

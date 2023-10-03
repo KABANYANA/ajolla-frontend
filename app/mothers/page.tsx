@@ -38,50 +38,11 @@ const MotherList: React.FC = () => {
     return <div>Error: {error}</div>;
   }
   return (
-    // <Layout>
-    //      <div className="grid grid-cols-2">
-    //     <h1 className="text-4xl mt-16 font-bold mb-16" style={{marginLeft:"37%"}} >Mothers</h1>
-    //     {/* <Image src="logoA.png" alt="Logo" className="h-32  " style={{marginLeft:"73%"}} />
-    //      */}
-    //         <Image
-    //  src="/LO.png"
-    //   alt="Logo"
-    //   width={120}
-    //   height={80}
-    //   style={{ marginTop: '10px', marginLeft: '500px' }}
-      
-    // /> 
-
-    //     </div>
-    // <div className='mt-10 ml-96 absolute top-40 left-0'>
-    //   <table className="table-auto w-full">
-    //     <thead>
-    //       <tr>
-    //         <th className="px-4 py-2">ID</th>
-    //         <th className="px-4 py-2">Name</th>
-    //         <th className="px-4 py-2">Email</th>
-    //         <th className="px-4 py-2">Phone</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    //       {mothers.map((mother) => (
-    //         <tr key={mother.id}>
-    //           <td className="border px-32 py-8">{mother.id}</td>
-    //           <td className="border px-32 py-8">{mother.first_name}</td>
-    //           <td className="border px-32 py-8">{mother.email}</td>
-    //           <td className="border px-32 py-8">
-    //            {mother.phone}
-    //           </td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </table>
-    // </div>
-    // </Layout>
+   
 
     <Layout>
   <div className="grid grid-cols-1 sm:grid-cols-2">
-    <h1 className="text-4xl mt-16 font-bold mb-16 ml-56 text-center sm:text-left">
+    <h1 className="text-4xl mt-16 font-bold mb-16 ml-60 text-center sm:text-left">
       Mothers
     </h1>
     <div className="flex justify-center sm:justify-end">
@@ -90,7 +51,7 @@ const MotherList: React.FC = () => {
         alt="Logo"
         width={120}
         height={80}
-        className="mt-10"
+        className="mt-10 mr-56"
       />
     </div>
   </div>

@@ -239,7 +239,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
   }, []);
   return (
     <Layout>
-      <div className="container mx-auto ml-16">
+      <div className="container mx-auto ml-20">
         <div className="mt-10">
           <div className="grid grid-cols-2">
             <h1 className="text-4xl ml-32 font-bold mb-16">Dashboard</h1>
