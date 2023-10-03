@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import useCreateUser from '../hooks/useCreateUser';
 const SignUpPage = () => {
@@ -51,11 +52,13 @@ const SignUpPage = () => {
     <div className="flex flex-col sm:flex-row h-screen text-xl">
       <div className="bg-custom-orange sm:w-1/3 flex justify-center items-center">
         <div className="flex items-center 2 ml-4">
-          <img
-            src="/LO.png"
-            alt="Logo"
-            
-          />
+        <Image
+          src="/LO.png"
+          alt="Logo"
+          width={400}
+          height={200}
+          style={{ marginTop: '20px', marginLeft: '10px' }}
+        />
           
         </div>
        
