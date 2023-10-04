@@ -254,22 +254,22 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
           </div>
           <h1 className="text-4xl ml-56 font-semibold">Today Summary</h1>
           <div className="grid grid-cols-4 mt-16 ml-20">
-            <div className="w-8/12 h-40 bg-pink-100 rounded-2xl text-center ml-32">
+            <div className="w-8/12 h-40  hover:scale-110 bg-pink-100 rounded-2xl text-center ml-32 transition-all duration-300">
               <FcDocument className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="coursesCount">Loading...</h1>
               <p>Courses Taken</p>
             </div>
-            <div className="w-8/12 h-40 bg-yellow-100 rounded-2xl text-center ml-20">
+            <div className="w-8/12 h-40  hover:scale-110 bg-yellow-100 rounded-2xl text-center ml-20 transition-all duration-300">
               <FcCalendar className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="appointmentsCount">Loading...</h1>
               <p>Appointments</p>
             </div>
-            <div className="w-8/12 h-40 bg-purple-100 rounded-2xl text-center ml-8">
+            <div className="w-8/12 h-40  hover:scale-110 bg-purple-100 rounded-2xl text-center ml-8 transition-all duration-300">
               <FcBusinesswoman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="mothersCount">Loading...</h1>
               <p>New Mothers</p>
             </div>
-            <div className="w-8/12 h-40 bg-green-100 rounded-2xl text-center ">
+            <div className="w-8/12 h-40 hover:scale-110 bg-green-100 rounded-2xl text-center transition-all duration-300 ">
               <FcBusinessman className="inline-block mr-2 text-5xl" />
               <h1 className="font-bold text-3xl py-5" id="lactationistsCount">Loading...</h1>
               <p>New Lactationists</p>
