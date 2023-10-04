@@ -2,4 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@media(max-width:1025px){
+.lactationist{
+    margin-left: 5%;
+}
+.table{
+    width: 20%;
+    margin-right: 50%;
+}
+.container{
+    margin-right: -20%;
+}
+.mothers{
+    margin-left: 10% ;
+}
+}
 
+
+
+
+
+@media(max-width:1300px){
+    .lactationist{
+        margin-left: 10%;
+    }
+    .container{
+        margin-left: 50%;
+    }
+    .mothers{
+        margin-left:10% ;
+    }
+    .logo{
+        margin-right: 15%;
+    }
+
+}
+
+
+@media(max-width:1440px){
+    .lactationist{
+        margin-left: 10%;
+    }
+
+    .container{
+    margin-left: 5%;
+}
+.mothers{
+    margin-left: 20%;
+}
+}
+
+
+@media(max-width:1600px){
+    .lactationist{
+        margin-left: 10%;
+    }
+
+.mothers{
+    margin-left: 20% ;
+}
+.table{
+    width: 80%;
+    margin-left: 10%;
+}
+}

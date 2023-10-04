@@ -224,23 +224,23 @@ const MotherList: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-10 lg:ml-60 sm:ml-60">
-        <table className="table-auto w-full sm:w-2/3  sm:ml-16 overflow-x-auto">
+      <div className="lactationist mt-10  ">
+        <table className="table table-auto w-2/3  overflow-x-auto">
           <thead>
             <tr>
-              <th className="px-16 sm:px-14 py-2">First Name</th>
-              <th className="px-16 sm:px-14 py-2">Second Name</th>
-              <th className="px-16 sm:px-14 py-2">Email</th>
-              <th className="px-16 sm:px-14 py-2">Biography</th>
+              <th className=" px-8 sm:px-8 py-2">First Name</th>
+              <th className="px-8 sm:px-8 py-2">Second Name</th>
+              <th className="px-8 sm:px-8 py-2">Email</th>
+              <th className="px-8 sm:px-8 py-2">Biography</th>
             </tr>
           </thead>
           <tbody>
             {mothers.map((mother) => (
               <tr key={mother.first_name}>
-                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.first_name}</td>
-                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.second_name}</td>
-                <td className="border px-16 py-2 sm:px-14 sm:py-4">{mother.email}</td>
-                <td className="border px-20 py-2 sm:px-20 sm:py-4">{mother.bio}</td>
+                <td className="border px-8 py-2 sm:px-8 sm:py-2">{mother.first_name}</td>
+                <td className="border px-8 py-2 sm:px-8 sm:py-2">{mother.second_name}</td>
+                <td className="border px-8 py-2 sm:px-8 sm:py-2">{mother.email}</td>
+                <td className="border px-16 py-2 sm:px-16 sm:py-2">{mother.bio}</td>
               </tr>
             ))}
           </tbody>
