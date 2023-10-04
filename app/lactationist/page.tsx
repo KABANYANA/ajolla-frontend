@@ -216,7 +216,7 @@ const MotherList: React.FC = () => {
   return (
     <Layout>
       <div className="grid grid-cols-1 sm:grid-cols-2">
-        <h1 className="text-3xl mt-16 font-bold mb-16 text-center sm:text-left lg:ml-80 ml-60">
+        <h1 className="titlelac text-3xl mt-16 font-bold mb-16 text-center sm:text-left ">
           Lactationist
         </h1>
         <div className="flex justify-center mr-32 sm:justify-end">

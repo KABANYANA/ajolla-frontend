@@ -61,8 +61,33 @@
 .mothers{
     margin-left: 20% ;
 }
+.titlem{
+    margin-left: 50%;
+}
+.titlelac{
+    margin-left: 40%;
+}
 .table{
     width: 80%;
     margin-left: 10%;
+}
+}
+
+@media(min-width:1601px){
+    .lactationist{
+        margin-left: 2%;
+    }
+    .titlelac{
+        margin-left: 45%;
+    }
+.titlem{
+    margin-left: 55%;
+}
+.mothers{
+    margin-left: 25% ;
+}
+.table{
+    width: 80%;
+    margin-left: 20%;
 }
 }

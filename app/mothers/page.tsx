@@ -42,7 +42,7 @@ const MotherList: React.FC = () => {
 
     <Layout>
   <div className="grid grid-cols-1 sm:grid-cols-2">
-    <h1 className=" text-4xl mt-16 font-bold mb-16 ml-80 text-center sm:text-left">
+    <h1 className="titlem text-4xl mt-16 font-bold mb-16 text-center sm:text-left">
       Mothers
     </h1>
     <div className="logo flex justify-center sm:justify-end">
