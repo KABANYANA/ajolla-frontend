@@ -72,7 +72,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
       .then(response => response.json())
       .then(courses => {
         const coursesUploaded = (courses.length / total) * 100;
-        fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/')
+        fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/users/')
           .then(response => response.json())
           .then(articles => {
             const educationalTips = (articles.length / total) * 100;
