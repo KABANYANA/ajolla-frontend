@@ -1,14 +1,15 @@
  
 
-import Register from "./registaration/page"
+// import Register from "./registaration/page"
+import Login from "./logins/page"
 
 
 
 export default function Home() {
   return (
    <>
-<Register/>
-   {/* <Layout/> */}
+{/* <Register/> */}
+   <Login/>
    
    
    </>
