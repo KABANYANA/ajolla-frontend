@@ -50,13 +50,13 @@ const SignUpPage = () => {
   );
   return (
     <div className="flex flex-col sm:flex-row h-screen text-xl">
-      <div className="bg-custom-orange sm:w-1/3 flex justify-center items-center">
+      <div className="bg-custom-orange sm:w-full flex justify-center items-center">
         <div className="flex items-center 2 ml-4">
         <Image
-          src="/LO.png"
+          src="/login.png"
           alt="Logo"
-          width={400}
-          height={200}
+          width={600}
+          height={400}
           style={{ marginTop: '20px', marginRight: '16px' }}
         />
           
@@ -67,8 +67,8 @@ const SignUpPage = () => {
         </div>
       
       </div>
-      <div className="form-container bg-white flex flex-col items-center justify-center md:w-2/3 w-full">
-      <h1 className="text-3xl font-bold w-1/   font-bold mb-1 mt-4 text-custom-orange">
+      <div className="w-full bg-white bg-opacity-40 border border-white rounded-2xl flex flex-col absolute justify-center  mt-8 items-center p-6 sm:w-8/12 sm:p-12" style={{marginLeft:"20%" }}>
+      <h1 className="text-3xl font-bold mb-1 mt-4 text-black">
         Create an Account
        </h1>
        <form className="mb-4 sm:mb-6 w-2/3" onSubmit={handleCreateUser}>
@@ -79,7 +79,7 @@ const SignUpPage = () => {
             <input
               type="text"
               id="firstName"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"
+              className="text-lg font-thin w-full border-solid bg-white/80 h-10 border rounded-2xl px-4 py-6"
               placeholder="Enter Full Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
@@ -93,7 +93,7 @@ const SignUpPage = () => {
             <input
               type="text"
               id="lastName"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"    
+              className="text-lg font-thin w-full border-solid  bg-white/80 h-10 border rounded-2xl px-4 py-6"    
               placeholder="Enter  Middle Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
@@ -108,7 +108,7 @@ const SignUpPage = () => {
             <input
               type="text"
               id="username"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              className="text-lg font-thin w-full border-solid  bg-white/80 h-10 border rounded-2xl px-4 py-6"              
               placeholder="Enter Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -123,7 +123,7 @@ const SignUpPage = () => {
             <input
               type="text"
               id="Phone Number"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              className="text-lg font-thin w-full border-solid  bg-white/80 h-10 border rounded-2xl px-4 py-6"              
               placeholder="Enter Phone NUmber"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -138,7 +138,7 @@ const SignUpPage = () => {
             <input
               type="email"
               id="email"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"              
+              className="text-lg font-thin w-full border-solid bg-white/80 h-10 border rounded-2xl px-4 py-6"              
               placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -152,7 +152,7 @@ const SignUpPage = () => {
             <input
               type={showPassword ? 'text' : 'password'}
               id="password"
-              className="text-lg font-thin w-full border-solid border-custom-grey bg-white/80 h-10 border rounded-2xl px-4 py-2"             
+              className="text-lg font-thin w-full border-solid  bg-white/80 h-10 border rounded-2xl px-4 py-6"             
                placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -171,7 +171,7 @@ const SignUpPage = () => {
     
 <button
   type="submit"
-  className={`bg-[#07A685] text-white w-40 h-12 rounded-[50px] font-bold ${
+  className={`bg-[#07A685] text-white w-56 h-10 rounded-[50px] font-bold ${
     isSignUpComplete ? '' : 'pointer-events-none opacity-50'
   }`}
 >
@@ -182,7 +182,7 @@ const SignUpPage = () => {
 
   
 </div>
-<p className="text-center text-lg font-light w-full ">
+<p className="text-center text-lg font-light -mt-2 w-full ">
               Already have an account?{" "}
          <Link href="/logins">
              <span className="font-bold">Sign in</span>

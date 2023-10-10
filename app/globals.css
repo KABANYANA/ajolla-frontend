@@ -35,6 +35,9 @@
     .logo{
         margin-right: 15%;
     }
+    
+    
+   
 
 }
 
@@ -89,5 +92,9 @@
 .table{
     width: 80%;
     margin-left: 20%;
+}
+.table1{
+    width: 80%;
+    margin-left: 5%;
 }
 }
