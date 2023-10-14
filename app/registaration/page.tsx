@@ -67,7 +67,7 @@ const SignUpPage = () => {
         </div>
       
       </div>
-      <div className="w-full bg-white bg-opacity-40 border border-white rounded-2xl flex flex-col absolute justify-center  mt-8 items-center p-6 sm:w-8/12 sm:p-12" style={{marginLeft:"20%" }}>
+      <div className="w-full bg-white bg-opacity-40 border border-white rounded-2xl flex flex-col absolute justify-center  mt-8 items-center p-6 sm:w-8/12 sm:p-12" style={{marginLeft:"16%" }}>
       <h1 className="text-3xl font-bold mb-1 mt-4 text-black">
         Create an Account
        </h1>
