@@ -14,9 +14,9 @@ const Splash = () => {
       setShowSlide(true);
       router.push("/logins");
     }, 1500);
-
+  
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
 
   return (
     <div className={`min-h-screen -ml-10 flex items-center justify-center bg-[#07A685] ${showSplash ? "" : "hidden"}`} style={{ overflow: "hidden" }}>

@@ -63,7 +63,7 @@ function Overview() {
 
 var pieCanvas = document.getElementById('pieChart') as HTMLCanvasElement;
 var pieCtx = pieCanvas.getContext('2d');
-fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
+fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/')
   .then(response => response.json())
   .then(appointments => {
     const total = appointments.length;
@@ -80,7 +80,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
               var pieChart = new Chart(pieCtx, {
                 type: 'pie',
                 data: {
-                  labels: ["Booked Appointments", "Courses uploaded", "Educational Tips"],
+                  labels: ["Booked Appointments", "Courses Taken", "Educational Tips"],
                   datasets: [{
                     data: [bookedAppointments, coursesUploaded, educationalTips],
                     borderColor: [
@@ -139,13 +139,13 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
           datasets: [
             {
               data: [30, 67, 54, 56, 82, 70, 80],
-              label: "Royal Mothers",
+              label: "Sign Ins",
               borderColor: "#07A685",
               backgroundColor: "rgb(62,149,205,0.1)",
             },
             {
               data: [50, 40, 60, 70, 30, 80, 90],
-              label: "New Mothers",
+              label: "Sign Ups",
               borderColor: "#FFB6C1",
               backgroundColor: "rgb(255,0,0,0.1)",
             }
@@ -212,7 +212,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/')
     const mothersEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/mothers/list/';
     const lactationistsEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/lactationists/';
     const coursesEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/courses/';
-    const appointmentsEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/appointments/';
+    const appointmentsEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/';
     const fetchCounts = async () => {
       const mothersCount = await getTotalItems(mothersEndpoint);
       const lactationistsCount = await getTotalItems(lactationistsEndpoint);
