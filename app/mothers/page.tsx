@@ -185,7 +185,7 @@ const MotherList: React.FC = () => {
           Mothers
         </h1>
         <div className="logo flex justify-center sm:justify-end">
-          <Image src="/LO.png" alt="Logo" width={120} height={80} className="mt-10 mr-32" />
+          <Image src="/LO.png" alt="Logo" width={120} height={80} className="mt-10 mr-56" />
         </div>
       </div>
 

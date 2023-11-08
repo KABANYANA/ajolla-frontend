@@ -54,7 +54,7 @@ const Login = () => {
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    setFormError(""); // Clear the form error
+    setFormError(""); 
     if (email.trim() === "" || password.trim() === "") {
       setFormError('All fields are required');
     } else if (emailError === "" && passwordError === "") {
@@ -68,7 +68,7 @@ const Login = () => {
         if (response.ok) {
           router.push('/dashboard');
         } else {
-          setFormError("Login failed. Please try again.");
+          setFormError("Successfully logged in");
         }
       } catch (error) {
         setFormError("Network error. Please try again later.");
