@@ -72,7 +72,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/')
       .then(response => response.json())
       .then(courses => {
         const coursesUploaded = (courses.length / total) * 100;
-        fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/courses/')
+        fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/mothers/list/')
           .then(response => response.json())
           .then(articles => {
             const educationalTips = (articles.length / total) * 100;
@@ -209,7 +209,7 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/')
         }
       });
     }
-    const mothersEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/mothers/list/';
+    const mothersEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/users/';
     const lactationistsEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/lactationists/';
     const coursesEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/courses/';
     const appointmentsEndpoint = 'https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/';
