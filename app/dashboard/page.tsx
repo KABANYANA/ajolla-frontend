@@ -5,10 +5,10 @@
 import React, { useEffect } from "react";
 import { Chart } from "chart.js";
 import Layout from "../components/Layout";
-import { FcBusinesswoman } from "react-icons/fc";
-import { FcDocument  } from "react-icons/fc";
-import { FcCalendar } from "react-icons/fc";
-import { FcBusinessman } from "react-icons/fc";
+// import { FcBusinesswoman } from "react-icons/fc";
+// import { FcDocument  } from "react-icons/fc";
+// import { FcCalendar } from "react-icons/fc";
+// import { FcBusinessman } from "react-icons/fc";
 import Image from 'next/image';
 import { BASE_URL } from "@/app/config";
 async function getTotalItems(endpoint: RequestInfo | URL) {
@@ -252,27 +252,27 @@ fetch('https://ajolla-backend-45e8c30af30d.herokuapp.com/api/articles/')
       
     /> 
           </div>
-          <h1 className="text-4xl ml-56 font-semibold">Today Summary</h1>
-          <div className="grid grid-cols-4 mt-16 ml-20">
-            <div className="w-8/12 h-40  hover:scale-110 bg-pink-100 rounded-2xl text-center ml-32 transition-all duration-300">
-              <FcDocument className="inline-block mr-2 text-5xl" />
-              <h1 className="font-bold text-3xl py-5" id="coursesCount">Loading...</h1>
-              <p>Courses Taken</p>
+          <h1 className="text-4xl ml-56 font-semibold">Summary</h1>
+          <div className="grid grid-cols-4 mt-10 ml-20">
+            <div className="w-9/12 h-56  hover:scale-110 bg-pink-100 rounded-2xl text-center ml-32 transition-all duration-300">
+              {/* <FcDocument className="inline-block mr-2 text-5xl" /> */}
+              <h1 className="font-bold text-6xl  py-5" id="coursesCount">Loading...</h1>
+              <p className="font-bold text-4xl py-3">Courses Taken</p>
             </div>
-            <div className="w-8/12 h-40  hover:scale-110 bg-yellow-100 rounded-2xl text-center ml-20 transition-all duration-300">
-              <FcCalendar className="inline-block mr-2 text-5xl" />
-              <h1 className="font-bold text-3xl py-5" id="appointmentsCount">Loading...</h1>
-              <p>Appointments</p>
+            <div className="w-9/12 h-56  hover:scale-110 bg-yellow-100 rounded-2xl text-center ml-20 transition-all duration-300">
+              {/* <FcCalendar className="inline-block mr-2 text-5xl" /> */}
+              <h1 className="font-bold text-6xl  py-5" id="appointmentsCount">Loading...</h1>
+              <p className="font-bold text-4xl py-3">Appointments</p>
             </div>
-            <div className="w-8/12 h-40  hover:scale-110 bg-purple-100 rounded-2xl text-center ml-8 transition-all duration-300">
-              <FcBusinesswoman className="inline-block mr-2 text-5xl" />
-              <h1 className="font-bold text-3xl py-5" id="mothersCount">Loading...</h1>
-              <p>New Mothers</p>
+            <div className="w-9/12 h-56  hover:scale-110 bg-purple-100 rounded-2xl text-center ml-8 transition-all duration-300">
+              {/* <FcBusinesswoman className="inline-block mr-2 text-5xl" /> */}
+              <h1 className="font-bold text-6xl  py-5" id="mothersCount">Loading...</h1>
+              <p className="font-bold text-4xl py-3">New Mothers</p>
             </div>
-            <div className="w-8/12 h-40 hover:scale-110 bg-green-100 rounded-2xl text-center transition-all duration-300 ">
-              <FcBusinessman className="inline-block mr-2 text-5xl" />
-              <h1 className="font-bold text-3xl py-5" id="lactationistsCount">Loading...</h1>
-              <p>New Lactationists</p>
+            <div className="w-9/12 h-56 hover:scale-110 bg-green-100 rounded-2xl text-center transition-all duration-300 ">
+              {/* <FcBusinessman className="inline-block mr-2 text-5xl" /> */}
+              <h1 className="font-bold text-6xl  py-5" id="lactationistsCount">Loading...</h1>
+              <p className="font-bold text-4xl py-3"> Lactationists</p>
             </div>
           </div>
           <div className="grid grid-cols-2 ml-56">
